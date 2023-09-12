@@ -1,92 +1,62 @@
-# This repository is no longer maintained
-instead use [tuidoku](https://github.com/flyingpeakock/tuidoku) instead.
+# Advanced Sudoku Solver with Qt GUI
 
-# Console Sudoku
+## 🧩 Your Comprehensive Sudoku Solving Solution 🎲
 
-Simple ncurses program to play sudoku in the terminal
-written entirely in C++
+Welcome to the Advanced Sudoku Solver, your all-in-one solution for solving Sudoku puzzles efficiently and interactively. Whether you're a Sudoku enthusiast or looking to conquer challenging puzzles, our application is here to assist you. This README provides a comprehensive overview of our solver, how to use it, and how you can contribute to its development.
 
-## How to Play
-Fill in all the missing squares with no repeating digits in
-the column, row or box.
-Use hjkl, wasd or arrow keys to navigate around the board.
-Press i or p to enter input mode or pencil mode respectively.
-You can also toggle between the two modes by pressing escape.
-To go to a specific box on the board type g followed by the 
-column number then the row number. For example, to go to 
-column 4, row 2 type g42. Press c to check the puzzle for any wrong
-inputs, mistakes turn red and correct inputs turn blue. Press c
-again to remove the colors.
-This game supports up to 3 pencil marks per box.
-To remove a mistake or the most recent pencil mark press
-your spacebar in their respective modes.
-To remove a specific pencil mark enter that number in the box
-when in pencil mode.
+## 🔑 Key Features
 
-### Command line arguments
-You can pass the max number of empty boxes in the generated board
-by passing any integer greater than 0 as an argument.    
-To change the text on the right from hjkl to wasd pass the argument -w or --wasd.    
-This program is able to parse opensudoku and sdm files for puzzles. Pass --opensudoku or --sdm followed by the filename to parse the file.
+- **Sudoku Solving**: Solve Sudoku puzzles of varying difficulties with ease using a backtracking algorithm and a state space tree data structure.
 
-## How to Install
-clone this repository then compile using g++ or clang++    
+- **User-Friendly Qt GUI**: Enjoy an intuitive and visually appealing graphical user interface (GUI) built with the Qt framework, enhancing your solving experience.
 
-### Linux
-```
-git clone https://github.com/flyingpeakock/Console_sudoku.git
-cd Console_sudoku/
-g++ -O3 -pthread ./src/*.cpp -lncursesw -o console_sudoku
-```
-### OSX
-```
-git clone https://github.com/flyingpeakock/Console_sudoku.git
-cd Console_sudoku/
-clang++ -O3 -pthread -std=c++11 -stdlib=libc++ ./src/*.cpp -lncursesw -o console_sudoku
-```
+- **Input Validation**: Ensure the validity of your Sudoku input before solving, preventing common mistakes.
 
-### AUR
-This program is also located on the arch user repository.
-```
-yay -S console_sudoku
-```
+- **Difficulty Levels**: Choose from various difficulty levels, from easy to expert, to match your puzzle-solving skills.
 
--lncursesw flag is required to link ncurses.h   
--O3 is recommended to speed up puzzle generation but is not required.   
+- **Interactive Pencil Marks**: Utilize interactive pencil marks to keep track of possible values for each cell.
 
-To run this program from any directory move the generated
-console_sudoku file to anywhere in your $PATH.
-```
-cp console_sudoku ~/.local/bin/console_sudoku
-```
+## 🚀 Getting Started
 
-### Troubleshooting
-If the compiler cannot find ncurses.h you need to make sure that ncurses is installed.
-If you cannot find ncurses in your package manager it might be called something like
-libcurses or curses instead. If it still doesn't work use the -lncurses flag instead
-of -lncursesw when compiling.
+Getting started with the Advanced Sudoku Solver is straightforward:
 
-## Screenshots
-![new game](https://i.imgur.com/qE879fN.png)
-![same game played a little](https://i.imgur.com/nLHjHNu.png)
-![same game with check](https://i.imgur.com/pZmdl6y.png)
+1. **Clone the Repository**: Clone this repository to your local machine:
+   ```
+   git clone https://github.com/your-username/sudoku-solver.git
+   ```
 
-## Generate or Solve Sudoku Puzzles
-You can use the Generator files and Solver files to generate
-or solve sudoku puzzles, some C++ experience is recommended
-but not required if you don't mind learning a little.
+2. **Compile and Run**: Open the project in your preferred development environment that supports Qt (e.g., Qt Creator). Compile and run the application.
 
-To solve an unsolved puzzle create a Solver object and pass the 
-unsolved puzzle to the constructor. The unsolved puzzle
-can be an int\*\*, int[9][9] or a 9x9 std::array. Solve the 
-puzzle by calling the solve method on the Solver object.
-To get the solved puzzle call the getGrid method on the object,
-this method returns a 9x9 std::array. 
-To check if the supplied puzzle generates a unique solution 
-the method isUnique may be called, this returns a boolean.
+3. **Solve Sudoku Puzzles**: Use the interactive GUI to input Sudoku puzzles or load existing ones. Click the "Solve" button to see the magic happen!
 
-The generator uses Solver to build and check uniqueness of puzzles,
-To create a puzzle create a Generator object. To get the unsolved
-puzzle call the method getGrid. To get the solved puzzle call the
-method getSolution.
+## 💼 Usage
 
+The Advanced Sudoku Solver is designed to make solving Sudoku puzzles a breeze. Here's how to make the most of our application:
+
+- **Input Sudoku Puzzles**: Input Sudoku puzzles directly into the grid by clicking on cells and typing numbers or load puzzles from external sources.
+
+- **Interactive Pencil Marks**: Utilize pencil marks to keep track of possible values for each cell. Toggle pencil marks on and off as needed.
+
+- **Solve Puzzles**: Click the "Solve" button to watch the solver work its magic. The application will display the solution or inform you if no solution exists.
+
+- **Choose Difficulty**: Experiment with puzzles of varying difficulties to challenge your Sudoku-solving skills.
+
+## 🤝 Contributing
+
+We welcome contributions from Sudoku enthusiasts and developers passionate about enhancing the Advanced Sudoku Solver:
+
+1. **Feedback and Suggestions**: Share your feedback and ideas for improvement with our team. 📣
+
+2. **Bug Reports**: If you encounter any issues while using our application, please report them to help us improve. 🐛
+
+3. **Code Contributions**: Developers can contribute by enhancing the solver's features, improving performance, or fixing bugs. Fork our repository, make your changes, and submit a pull request. 🚧
+
+## 📜 License
+
+The Advanced Sudoku Solver is available under the [License Name] License. Details can be found in the [LICENSE](LICENSE) file.
+
+## 📧 Contact
+
+For inquiries, feedback, or support, please reach out to our team at [contact@sudokusolver.com]. 📩
+
+Thank you for choosing the Advanced Sudoku Solver as your Sudoku-solving companion. Enjoy conquering those Sudoku puzzles! 🧩🎲🔑
